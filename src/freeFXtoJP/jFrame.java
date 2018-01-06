@@ -5,8 +5,23 @@
  */
 package freeFXtoJP;
 
+import java.awt.AWTException;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Paint;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -17,6 +32,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import sun.java2d.pipe.DrawImage;
+import sun.net.www.content.image.png;
 
 /**
  *
@@ -29,6 +46,7 @@ public class jFrame extends javax.swing.JFrame {
      */
     public jFrame() {
         initComponents();
+        groupButton();
     }
 
     /**
@@ -39,9 +57,20 @@ public class jFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jBGoster = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
         jPChart = new javax.swing.JPanel();
+        jPChart1 = new javax.swing.JPanel();
+        jPChart4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        jPChart2 = new javax.swing.JPanel();
+        jPChart3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TFfirstName = new javax.swing.JTextField();
@@ -55,6 +84,58 @@ public class jFrame extends javax.swing.JFrame {
         TFsecondFp = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         TFsecondSp = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        fbaslangic = new javax.swing.JTextField();
+        fkat = new javax.swing.JTextField();
+        skat = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        sbaslangic = new javax.swing.JTextField();
+        jRbaslangic = new javax.swing.JRadioButton();
+        jRbitis = new javax.swing.JRadioButton();
+        jRbaslangic2 = new javax.swing.JRadioButton();
+        jRbitis2 = new javax.swing.JRadioButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        tfislem1 = new javax.swing.JTextField();
+        tfbaslangic1 = new javax.swing.JTextField();
+        tfsüre1 = new javax.swing.JTextField();
+        tfucret1 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        tfislem2 = new javax.swing.JTextField();
+        tfbaslangic2 = new javax.swing.JTextField();
+        tfsüre2 = new javax.swing.JTextField();
+        tfucret2 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        tfislem3 = new javax.swing.JTextField();
+        tfbaslangic3 = new javax.swing.JTextField();
+        tfsüre3 = new javax.swing.JTextField();
+        tfucret3 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        tfislem4 = new javax.swing.JTextField();
+        tfbaslangic4 = new javax.swing.JTextField();
+        tfsüre4 = new javax.swing.JTextField();
+        tfucret4 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        tfislem5 = new javax.swing.JTextField();
+        tfbaslangic5 = new javax.swing.JTextField();
+        tfsüre5 = new javax.swing.JTextField();
+        tfucret5 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        tfislem6 = new javax.swing.JTextField();
+        tfbaslangic6 = new javax.swing.JTextField();
+        tfsüre6 = new javax.swing.JTextField();
+        tfucret6 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        tfBaslangicT = new javax.swing.JTextField();
+        tfBitisT = new javax.swing.JTextField();
+        Tamam = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,8 +146,40 @@ public class jFrame extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
+
         jPChart.setBackground(new java.awt.Color(51, 51, 255));
         jPChart.setLayout(new java.awt.BorderLayout());
+        jPanel2.add(jPChart);
+
+        jPChart1.setBackground(new java.awt.Color(51, 51, 255));
+        jPChart1.setLayout(new java.awt.BorderLayout());
+        jPanel2.add(jPChart1);
+
+        jPChart4.setBackground(new java.awt.Color(51, 51, 255));
+        jPChart4.setLayout(new java.awt.BorderLayout());
+        jPanel2.add(jPChart4);
+
+        jScrollPane1.setViewportView(jPanel2);
+
+        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
+
+        jPChart2.setBackground(new java.awt.Color(51, 51, 255));
+        jPChart2.setLayout(new java.awt.BorderLayout());
+        jPanel3.add(jPChart2);
+
+        jPChart3.setBackground(new java.awt.Color(51, 51, 255));
+        jPChart3.setLayout(new java.awt.BorderLayout());
+        jPanel3.add(jPChart3);
+
+        jScrollPane2.setViewportView(jPanel3);
+
+        jButton1.setText("Print");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("yapılacak ilk işin ismi");
 
@@ -97,36 +210,97 @@ public class jFrame extends javax.swing.JFrame {
 
         TFsecondSp.setText("2");
 
+        jLabel9.setText("kat ?");
+
+        fbaslangic.setText("2");
+
+        fkat.setText("1");
+
+        skat.setText("1");
+
+        jLabel10.setText("kat ?");
+
+        sbaslangic.setText("2");
+        sbaslangic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sbaslangicActionPerformed(evt);
+            }
+        });
+
+        jRbaslangic.setText("başlangıç");
+        jRbaslangic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRbaslangicActionPerformed(evt);
+            }
+        });
+
+        jRbitis.setText("bitiş");
+        jRbitis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRbitisActionPerformed(evt);
+            }
+        });
+
+        jRbaslangic2.setText("başlangıç");
+        jRbaslangic2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRbaslangic2ActionPerformed(evt);
+            }
+        });
+
+        jRbitis2.setText("bitiş");
+        jRbitis2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRbitis2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TFfirstName))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(fbaslangic)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TFfirstName, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                    .addComponent(TFfirstFpoint))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                        .addComponent(TFfirstFpoint))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jRbitis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRbaslangic, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TFfirstSpoint))
+                    .addComponent(TFfirstSpoint)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fkat))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TFsecondname))
+                    .addComponent(TFsecondname)
+                    .addComponent(sbaslangic))
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TFsecondFp))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TFsecondFp))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jRbitis2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRbaslangic2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TFsecondSp))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(skat))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TFsecondSp)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,8 +321,169 @@ public class jFrame extends javax.swing.JFrame {
                     .addComponent(TFsecondname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TFsecondFp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TFsecondSp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(fbaslangic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fkat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sbaslangic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jRbaslangic))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRbitis))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(skat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jRbaslangic2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRbitis2)))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
+
+        jScrollPane3.setViewportView(jPanel1);
+
+        jPanel4.setLayout(new java.awt.GridLayout(7, 3, 20, 5));
+        jPanel4.add(jLabel8);
+
+        jLabel11.setText("işlem süresi");
+        jPanel4.add(jLabel11);
+
+        jLabel12.setText("başlangıç tamponu");
+        jPanel4.add(jLabel12);
+
+        jLabel13.setText("uzatma-kısaltma süresi");
+        jPanel4.add(jLabel13);
+
+        jLabel24.setText("uzatma-kısaltma ücreti");
+        jPanel4.add(jLabel24);
+
+        jLabel25.setText("1.İşlem");
+        jPanel4.add(jLabel25);
+
+        tfislem1.setText("4");
+        tfislem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfislem1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(tfislem1);
+
+        tfbaslangic1.setText("0");
+        jPanel4.add(tfbaslangic1);
+
+        tfsüre1.setText("-1");
+        jPanel4.add(tfsüre1);
+
+        tfucret1.setText("0");
+        jPanel4.add(tfucret1);
+
+        jLabel27.setText("2.İşlem");
+        jPanel4.add(jLabel27);
+
+        tfislem2.setText("7");
+        jPanel4.add(tfislem2);
+
+        tfbaslangic2.setText("2");
+        jPanel4.add(tfbaslangic2);
+
+        tfsüre2.setText("+2");
+        tfsüre2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfsüre2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(tfsüre2);
+
+        tfucret2.setText("0");
+        jPanel4.add(tfucret2);
+
+        jLabel28.setText("3.İşlem");
+        jPanel4.add(jLabel28);
+
+        tfislem3.setText("10");
+        jPanel4.add(tfislem3);
+
+        tfbaslangic3.setText("2");
+        jPanel4.add(tfbaslangic3);
+
+        tfsüre3.setText("0");
+        jPanel4.add(tfsüre3);
+
+        tfucret3.setText("0");
+        jPanel4.add(tfucret3);
+
+        jLabel26.setText("4.İşlem");
+        jPanel4.add(jLabel26);
+
+        tfislem4.setText("2");
+        jPanel4.add(tfislem4);
+
+        tfbaslangic4.setText("9");
+        jPanel4.add(tfbaslangic4);
+
+        tfsüre4.setText("0");
+        jPanel4.add(tfsüre4);
+
+        tfucret4.setText("0");
+        jPanel4.add(tfucret4);
+
+        jLabel14.setText("5.İşlem");
+        jPanel4.add(jLabel14);
+
+        tfislem5.setText("6");
+        jPanel4.add(tfislem5);
+
+        tfbaslangic5.setText("1");
+        jPanel4.add(tfbaslangic5);
+
+        tfsüre5.setText("0");
+        jPanel4.add(tfsüre5);
+
+        tfucret5.setText("0");
+        jPanel4.add(tfucret5);
+
+        jLabel15.setText("6.İşlem");
+        jPanel4.add(jLabel15);
+
+        tfislem6.setText("10");
+        jPanel4.add(tfislem6);
+
+        tfbaslangic6.setText("1");
+        jPanel4.add(tfbaslangic6);
+
+        tfsüre6.setText("0");
+        jPanel4.add(tfsüre6);
+
+        tfucret6.setText("0");
+        jPanel4.add(tfucret6);
+
+        jScrollPane4.setViewportView(jPanel4);
+
+        jLabel16.setText("başlangıç Tamponu");
+
+        jLabel17.setText("bitiş Tamponu");
+
+        tfBaslangicT.setText("1");
+        tfBaslangicT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfBaslangicTActionPerformed(evt);
+            }
+        });
+
+        tfBitisT.setText("2");
+
+        Tamam.setText("İşlemler Tamam");
+        Tamam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TamamActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,12 +492,29 @@ public class jFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(123, 123, 123)
-                        .addComponent(jBGoster)
-                        .addGap(0, 644, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(189, 189, 189)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 852, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Tamam)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tfBaslangicT))
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tfBitisT))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBGoster)))
+                        .addGap(0, 184, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -170,13 +522,31 @@ public class jFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBGoster)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel17))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfBaslangicT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfBitisT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(Tamam)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jBGoster)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 353, Short.MAX_VALUE)
-                .addComponent(jPChart, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -191,6 +561,10 @@ public class jFrame extends javax.swing.JFrame {
         int firstSp=Integer.valueOf(TFfirstSpoint.getText().toString());
         int secondFp=Integer.valueOf(TFsecondFp.getText().toString());
         int secondSp=Integer.valueOf(TFsecondSp.getText().toString());
+        int fbaslangic1=Integer.valueOf(fbaslangic.getText().toString());
+        int fkat1=Integer.valueOf(fkat.getText().toString());
+        int sbaslangic1=Integer.valueOf(sbaslangic.getText().toString());
+        int skat1=Integer.valueOf(skat.getText().toString());
         
         DefaultCategoryDataset barChartData=new DefaultCategoryDataset();
         barChartData.setValue(2000, "asd", "asdf");
@@ -200,33 +574,219 @@ public class jFrame extends javax.swing.JFrame {
         
         JFreeChart barChart=ChartFactory.createBarChart("osman deneme", "ay", "yıl", barChartData, PlotOrientation.HORIZONTAL, rootPaneCheckingEnabled, rootPaneCheckingEnabled, rootPaneCheckingEnabled);
         JFreeChart lineChart=ChartFactory.createLineChart("linebu", "x", "y", barChartData);
-        JFreeChart xyLineChart=ChartFactory.createXYLineChart("LOB", "gün", "ünite", createDataset(firstName,secondName,firstFp,firstSp,secondFp,secondSp), PlotOrientation.VERTICAL, rootPaneCheckingEnabled, rootPaneCheckingEnabled, rootPaneCheckingEnabled);
+        JFreeChart xyLineChart=ChartFactory.createXYLineChart("LOB", "gün", "kat", createDataset(firstName,secondName,firstFp,firstSp,fbaslangic1,fkat1,secondFp,secondSp,sbaslangic1,skat1), PlotOrientation.VERTICAL, rootPaneCheckingEnabled, rootPaneCheckingEnabled, rootPaneCheckingEnabled);
+        //----------------- chart backround  -------------------------
+        BufferedImage image = null;
         
+        File url = new File("C:\\Users\\mmz\\Downloads\\1954184.png");
+        try {
+            image = ImageIO.read(url);
+        } catch (IOException ex) {
+            Logger.getLogger(jFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //xyLineChart.setBackgroundImage(image);
+        BufferedImage image2= xyLineChart.createBufferedImage(30, 30);
+        ImageIcon ii=new ImageIcon(image);
+        //jLabel7.setIcon(ii);
+        
+        xyLineChart.setBackgroundPaint(Color.WHITE);
+        
+        //----------------- chart backround  -------------------------
         XYPlot barChrt=xyLineChart.getXYPlot();
         barChrt.setRangeGridlinePaint(Color.RED);
         
         ChartPanel barPanel=new ChartPanel(xyLineChart);
+        ChartPanel barPanel1=new ChartPanel(xyLineChart);
+        ChartPanel barPanel2=new ChartPanel(xyLineChart);
+        ChartPanel barPanel3=new ChartPanel(xyLineChart);
+        ChartPanel barPanel4=new ChartPanel(xyLineChart);
         jPChart.removeAll();
         jPChart.add(barPanel,BorderLayout.CENTER);
         jPChart.validate();
+        jPChart1.removeAll();
+        jPChart1.add(barPanel1,BorderLayout.CENTER);
+        jPChart1.validate();
+        jPChart2.removeAll();
+        jPChart2.add(barPanel2,BorderLayout.CENTER);
+        jPChart2.validate();
+        jPChart3.removeAll();
+        jPChart3.add(barPanel3,BorderLayout.CENTER);
+        jPChart3.validate();
+        jPChart4.removeAll();
+        jPChart4.add(barPanel4,BorderLayout.CENTER);
+        jPChart4.validate();
         
     }//GEN-LAST:event_jBGosterActionPerformed
 
+    boolean rBa1,rBi1,rBa2,rBi2;
     private void TFsecondnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFsecondnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TFsecondnameActionPerformed
 
-    public XYDataset createDataset(String fname,String sname,int fFp,int fSp,int sFp,int sSp){
+    private void sbaslangicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sbaslangicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sbaslangicActionPerformed
+
+    private void jRbaslangicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRbaslangicActionPerformed
+        // TODO add your handling code here:
+        rBa1=true;
+        rBi1=false;
+    }//GEN-LAST:event_jRbaslangicActionPerformed
+
+    private void jRbaslangic2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRbaslangic2ActionPerformed
+        // TODO add your handling code here:
+        rBa2=true;
+        rBi2=false;
+    }//GEN-LAST:event_jRbaslangic2ActionPerformed
+
+    private void jRbitisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRbitisActionPerformed
+        // TODO add your handling code here:
+        rBa1=false;
+        rBi1=true;
+    }//GEN-LAST:event_jRbitisActionPerformed
+
+    private void jRbitis2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRbitis2ActionPerformed
+        // TODO add your handling code here:
+        rBa1=false;
+        rBi1=true;
+    }//GEN-LAST:event_jRbitis2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //----------------- create image png -----------------
+        BufferedImage image = null;
+        image = new BufferedImage(jPChart.getSize().width, jPChart.getSize().height,BufferedImage.TYPE_INT_RGB);
+        jPChart.paint(image.createGraphics());
+        try {
+            ImageIO.write(image, "png", new File("C:\\Users\\mmz\\Documents\\AnneGunluguNet\\screenshot.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(jFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //----------------- create image png -----------------
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tfislem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfislem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfislem1ActionPerformed
+
+    private void tfBaslangicTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBaslangicTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfBaslangicTActionPerformed
+
+    //-----------------işlşem süresi değişkenleri--------------
+    int isüresi1,isüresi2,isüresi3,isüresi4,isüresi5,isüresi6;
+    //-----------------işlşem süresi değişkenleri--------------
+    //-----------------Başlangıç Tamponu değişkenleri----------
+    int btamponu1,btamponu2,btamponu3,btamponu4,btamponu5,btamponu6;
+    //-----------------Başlangıç Tamponu değişkenleri----------
+    //-----------------Uzatma Kısaltma Süresi değişkenleri-----
+    int usüresi1,usüresi2,usüresi3,usüresi4,usüresi5,usüresi6;
+    //-----------------Uzatma Kısaltma Süresi değişkenleri-----
+    int baTampon,biTampon;
+    
+    private void TamamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TamamActionPerformed
+        // TODO add your handling code here:
+        //-------------Değişkenleri alma---------------------
+        isüresi1=Integer.valueOf(tfislem1.getText().toString());
+        isüresi2=Integer.valueOf(tfislem2.getText().toString());
+        isüresi3=Integer.valueOf(tfislem3.getText().toString());
+        isüresi4=Integer.valueOf(tfislem4.getText().toString());
+        isüresi5=Integer.valueOf(tfislem5.getText().toString());
+        isüresi6=Integer.valueOf(tfislem6.getText().toString());
+        btamponu1=Integer.valueOf(tfbaslangic1.getText().toString());
+        btamponu2=Integer.valueOf(tfbaslangic2.getText().toString());
+        btamponu3=Integer.valueOf(tfbaslangic3.getText().toString());
+        btamponu4=Integer.valueOf(tfbaslangic4.getText().toString());
+        btamponu5=Integer.valueOf(tfbaslangic5.getText().toString());
+        btamponu6=Integer.valueOf(tfbaslangic6.getText().toString());
+        usüresi1=Integer.valueOf(tfsüre1.getText().toString());
+        usüresi2=Integer.valueOf(tfsüre2.getText().toString());
+        usüresi3=Integer.valueOf(tfsüre3.getText().toString());
+        usüresi4=Integer.valueOf(tfsüre4.getText().toString());
+        usüresi5=Integer.valueOf(tfsüre5.getText().toString());
+        usüresi6=Integer.valueOf(tfsüre6.getText().toString());
+        baTampon=Integer.valueOf(tfBaslangicT.getText().toString());
+        biTampon=Integer.valueOf(tfBitisT.getText());
+        //-------------Değişkenleri alma---------------------
+        //----------------Başlangıç Grafiği------------------
+        DefaultCategoryDataset BaslangicBarChartData=new DefaultCategoryDataset();
+        //---------------Data Set----------------------------
+        final XYSeries Birinciislem=new XYSeries("1.işlem");
+        Birinciislem.add(0,0);
+        Birinciislem.add(4,1);
+        final XYSeries Ikinciislem=new XYSeries("2.işlem");
+        Ikinciislem.add(0+btamponu2,0);
+        Ikinciislem.add(0+btamponu2+isüresi2,1);
+        final XYSeries Ucuncuislem=new XYSeries("3.işlem");
+        Ucuncuislem.add(0+btamponu2+btamponu3,0);
+        Ucuncuislem.add(0+btamponu2+btamponu3+isüresi3,1);
+        final XYSeries Dorduncuislem=new XYSeries("4.işlem");
+        Dorduncuislem.add(0+btamponu2+btamponu3+btamponu4,0);
+        Dorduncuislem.add(0+btamponu2+btamponu3+btamponu4+isüresi4,1);
+        final XYSeries Besinciislem=new XYSeries("5.işlem");
+        Besinciislem.add(0+btamponu2+btamponu3+btamponu4+btamponu5,0);
+        Besinciislem.add(0+btamponu2+btamponu3+btamponu4+btamponu5+isüresi5,1);
+        final XYSeries Altinciislem=new XYSeries("6.işlem");
+        Altinciislem.add(0+btamponu2+btamponu3+btamponu4+btamponu5+btamponu6,0);
+        Altinciislem.add(0+btamponu2+btamponu3+btamponu4+btamponu5+btamponu6+isüresi6,1);
+        
+        final XYSeriesCollection toplamDataset = new XYSeriesCollection( );
+        toplamDataset.addSeries(Birinciislem);
+        toplamDataset.addSeries(Ikinciislem);
+        toplamDataset.addSeries(Ucuncuislem);
+        toplamDataset.addSeries(Dorduncuislem);
+        toplamDataset.addSeries(Besinciislem);
+        toplamDataset.addSeries(Altinciislem);
+        
+        
+        //---------------Data Set----------------------------
+        JFreeChart BaslangicxyLineChart=ChartFactory.createXYLineChart("LOB", "gün", "kat", toplamDataset, PlotOrientation.VERTICAL, rootPaneCheckingEnabled, rootPaneCheckingEnabled, rootPaneCheckingEnabled);
+        BaslangicxyLineChart.setBackgroundPaint(Color.WHITE);
+        //----------------Başlangıç Grafiği------------------
+        ChartPanel barPanel=new ChartPanel(BaslangicxyLineChart);
+        jPChart.add(barPanel);
+        jPChart.validate();
+    }//GEN-LAST:event_TamamActionPerformed
+
+    private void tfsüre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfsüre2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfsüre2ActionPerformed
+
+    
+    private void groupButton(){
+        ButtonGroup bg=new ButtonGroup();
+        
+        bg.add(jRbaslangic);
+        bg.add(jRbitis);
+        
+        ButtonGroup bg1=new ButtonGroup();
+        
+        bg1.add(jRbaslangic2);
+        bg1.add(jRbitis2);
+    }
+    public XYDataset createDataset(String fname,String sname,int fFp,int fSp,int fbaslangic1,int fkat1, int sFp,int sSp,int sbaslangic1,int skat1){
         
         final XYSeries fire=new XYSeries(fname);
-        fire.add(fFp,0);
-        fire.add(fFp+fSp,1);
-        if(sFp<fFp+fSp){
-            sFp=fSp+1;
-        }
+        fire.add(fFp,fkat1-1);
+        fire.add(fFp+fSp,fkat1);
+        if(rBa1){
+            if(fFp+fbaslangic1>=sFp){
+            sFp=fFp+fbaslangic1;
+            }
+        }else if(rBi1){
+            if(fSp+fbaslangic1>=sSp){
+            sSp=fSp+fbaslangic1;
+            }
+        }    
+        
+        
+        
+//        if(sFp<fFp+fSp){
+//            sFp=fSp+1;
+//        }
         final XYSeries chrome=new XYSeries(sname);
-        chrome.add(sFp,0);
-        chrome.add(sFp+sSp,1);
+        chrome.add(sFp,skat1-1);
+        chrome.add(sFp+sSp,skat1);
         
         final XYSeriesCollection dataset = new XYSeriesCollection( );
         dataset.addSeries(fire);
@@ -268,25 +828,92 @@ public class jFrame extends javax.swing.JFrame {
             public void run() {
                 new jFrame().setVisible(true);
                 
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TFfirstFpoint;
-    private javax.swing.JTextField TFfirstName;
+    public javax.swing.JTextField TFfirstName;
     private javax.swing.JTextField TFfirstSpoint;
     private javax.swing.JTextField TFsecondFp;
     private javax.swing.JTextField TFsecondSp;
     private javax.swing.JTextField TFsecondname;
+    private javax.swing.JButton Tamam;
+    private javax.swing.JTextField fbaslangic;
+    private javax.swing.JTextField fkat;
     private javax.swing.JButton jBGoster;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPChart;
+    private javax.swing.JPanel jPChart1;
+    private javax.swing.JPanel jPChart2;
+    private javax.swing.JPanel jPChart3;
+    private javax.swing.JPanel jPChart4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jRbaslangic;
+    private javax.swing.JRadioButton jRbaslangic2;
+    private javax.swing.JRadioButton jRbitis;
+    private javax.swing.JRadioButton jRbitis2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextField sbaslangic;
+    private javax.swing.JTextField skat;
+    private javax.swing.JTextField tfBaslangicT;
+    private javax.swing.JTextField tfBitisT;
+    private javax.swing.JTextField tfbaslangic1;
+    private javax.swing.JTextField tfbaslangic2;
+    private javax.swing.JTextField tfbaslangic3;
+    private javax.swing.JTextField tfbaslangic4;
+    private javax.swing.JTextField tfbaslangic5;
+    private javax.swing.JTextField tfbaslangic6;
+    private javax.swing.JTextField tfislem1;
+    private javax.swing.JTextField tfislem2;
+    private javax.swing.JTextField tfislem3;
+    private javax.swing.JTextField tfislem4;
+    private javax.swing.JTextField tfislem5;
+    private javax.swing.JTextField tfislem6;
+    private javax.swing.JTextField tfsüre1;
+    private javax.swing.JTextField tfsüre2;
+    private javax.swing.JTextField tfsüre3;
+    private javax.swing.JTextField tfsüre4;
+    private javax.swing.JTextField tfsüre5;
+    private javax.swing.JTextField tfsüre6;
+    private javax.swing.JTextField tfucret1;
+    private javax.swing.JTextField tfucret2;
+    private javax.swing.JTextField tfucret3;
+    private javax.swing.JTextField tfucret4;
+    private javax.swing.JTextField tfucret5;
+    private javax.swing.JTextField tfucret6;
     // End of variables declaration//GEN-END:variables
+
+    private void SaveScreenShot() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
